@@ -5,7 +5,7 @@ A Python interface to view stored days on the camera, live footage, and saved cl
 ## Setup
 Change the ip address, username and password in main.py  
 
-recreate the conda environment using the yml file and conda. 
+Recreate the conda environment using the yml file and conda. 
 Open up linux terminal, mac terminal, or windows CMD 
 make sure you have conda installed.
 ```bash
@@ -17,8 +17,7 @@ You may also have to install opencv or cv2
 ```bash
 pip install opencv-python
 ```
-to save clips:
-There is a text box just below 'Save Clip' to name your file.
+To save clips, there is a text box just below 'Save Clip' to name your file.
 enter a file name e.g. 'clip123', click on save clip and then the clip to save.
 
 VLC media player is used to view live streams camera clips using the cvlc command. 
