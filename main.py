@@ -15,7 +15,10 @@ import cv2
 
 # if you don't know the ip address of the reolink camera, look on your routers wired clients on http://192.168.1.1/
 # reolinkapi.Camera("IP ADDRESS", "username", "Password")
-cam = reolinkapi.Camera("192.168.X.XXX", "Username", "Password")
+ip_address = '192.168.X.XXX'
+user_name = 'USERNAME'
+password = 'PASSWORD'
+cam = reolinkapi.Camera(ip_address, user_name, password)
 outpath = '/days' # location of whole day saves
 clip_path = '/clips' # location of certain clips saves
 
@@ -41,7 +44,7 @@ def download_day(date):
             print(name + '.mp4 Downloading' )
             # print(i)
             fname = motions[i]['filename']
-            urllib.request.urlretrieve('http://192.168.1.103/cgi-bin/api.cgi?cmd=Download&source='+fname+'&output='+fname+'&token=' + str(cam.token), dl_dir + '/' + name + '.mp4')
+            urllib.request.urlretrieve('http://'+ip_address+'/cgi-bin/api.cgi?cmd=Download&source='+fname+'&output='+fname+'&token=' + str(cam.token), dl_dir + '/' + name + '.mp4')
 
 
 def open_video_rtmp(file):
@@ -50,12 +53,12 @@ def open_video_rtmp(file):
         outname = t1.get("1.0", 'end-1c')
         if len(outname) > 0 and '.mp4' not in outname and ' ' not in outname:
             print(outname)
-            urllib.request.urlretrieve('http://192.168.1.103/cgi-bin/api.cgi?cmd=Download&source=' + file + '&output=' + file + '&token=' + str(cam.token), clip_path + '/' + outname + '.mp4')
+            urllib.request.urlretrieve('http://' + ip_address + '/cgi-bin/api.cgi?cmd=Download&source=' + file + '&output=' + file + '&token=' + str(cam.token), clip_path + '/' + outname + '.mp4')
         else:
             print('Enter Valid Filename')
         t1.delete('1.0', END)
     else:
-        os.system('vlc --prefetch-buffer-size 50000 --prefetch-seek-threshold 1000000 "rtmp://192.168.1.103/vod/' + file + '?&channel=0&stream=0&user=admin&password=KdsqzpN8Fe3D"')
+        os.system('vlc --prefetch-buffer-size 50000 --prefetch-seek-threshold 1000000 "rtmp://' + ip_address + '/vod/' + file + '?&channel=0&stream=0&user=' + user_name + '&password=' +password + '"')
 
 
 def open_video_mp4(file):
@@ -90,7 +93,7 @@ root = tk.Tk()
 
 root.title('CCTV Archive: '+ str(day.zfill(2)) + '/' + str(month.zfill(2)) + '/' + str(year))
 v = tk.StringVar()
-tk.Button(root, text='LIVE', command=partial(open_video_mp4, 'rtsp://admin:KdsqzpN8Fe3D@192.168.1.103:554//h264Preview_01_main')).grid(row=0, column=25)
+tk.Button(root, text='LIVE', command=partial(open_video_mp4, 'rtsp://'+user_name+':'+password+'@'+ip_address+':554//h264Preview_01_main')).grid(row=0, column=25)
 date = [year, month, day, 0, 0, 1,000000]
 tk.Button(root, text='Download Day', command=partial(download_day, date)).grid(row=1, column=25)
 button1 = tk.Button(root, text='Save clip', command=change_clip_mode, state=tk.NORMAL)
