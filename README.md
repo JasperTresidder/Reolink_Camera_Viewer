@@ -13,9 +13,12 @@ conda env create -f environment.yml
 conda activate Cam
 python3 main.py
 ```
-You may also have to install opencv or cv2 
+You may also have to install opencv or cv2 and VLC
 ```bash
 pip install opencv-python
+```
+```
+https://www.videolan.org/vlc/index.en_GB.html
 ```
 To save clips, there is a text box just below 'Save Clip' to name your file.
 enter a file name e.g. 'clip123', click on save clip and then the clip to save.
