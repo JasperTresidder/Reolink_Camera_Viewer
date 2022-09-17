@@ -19,8 +19,8 @@ ip_address = '192.168.X.XXX'
 user_name = 'USERNAME'
 password = 'PASSWORD'
 cam = reolinkapi.Camera(ip_address, user_name, password)
-outpath = '/days' # location of whole day saves
-clip_path = '/clips' # location of certain clips saves
+outpath = 'days/' # location of whole day saves
+clip_path = 'clips/' # location of certain clips saves
 
 def change_clip_mode():
     global clip_mode
