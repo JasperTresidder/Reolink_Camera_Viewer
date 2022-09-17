@@ -17,7 +17,7 @@ You may also have to install opencv or cv2
 ```bash
 pip install opencv-python
 ```
-to save clips: 
+to save clips:
 There is a text box just below 'Save Clip' to name your file.
 enter a file name e.g. 'clip123', click on save clip and then the clip to save.
 
