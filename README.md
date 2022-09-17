@@ -3,8 +3,7 @@ A Python interface to view stored days on the camera, live footage, and saved cl
 
 
 ## Setup
-Change the ip address, username and password in main.py 
-Change the ip address in requestvideo.sh. There are three of them 
+Change the ip address, username and password in main.py  
 
 recreate the conda environment using the yml file and conda. 
 Open up linux terminal, mac terminal, or windows CMD 
