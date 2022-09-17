@@ -23,7 +23,7 @@ https://www.videolan.org/vlc/index.en_GB.html
 To save clips, there is a text box just below 'Save Clip' to name your file.
 enter a file name e.g. 'clip123', click on save clip and then the clip to save.
 
-VLC media player is used to view live streams camera clips using the cvlc command. 
+VLC media player is used to view live streams camera clips using vlc commands and os.system. --https://wiki.videolan.org/VLC_command-line_help/
 
 ## Preview
 ![Screenshot at 2022-09-17 11-14-31](https://user-images.githubusercontent.com/51917264/190851760-a9f68216-5a67-425f-94a4-f06e131fd4bc.png)
