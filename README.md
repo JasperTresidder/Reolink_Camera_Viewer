@@ -13,6 +13,11 @@ conda env create -f environment.yml
 conda activate Cam
 python3 main.py
 ```
+You may also have to install opencv or cv2 
+```bash
+pip install opencv-python
+```
+
 VLC media player is used to view live streams camera clips. 
 
 ## Preview
