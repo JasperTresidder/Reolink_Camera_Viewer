@@ -1,5 +1,7 @@
-# Developed by Jasper Tresidder 2022/09/17
-# This is a tkinter interface to show all the videos stored on the reolink's SD card, or on custom stored days.
+'''Developed by Jasper Tresidder 2022/09/17
+This is a tkinter interface to show all the videos stored on the reolink's SD card, or on custom stored days.
+Development on python 3.8, reolinkapi is used for camera communication. '''
+
 
 
 import reolinkapi
